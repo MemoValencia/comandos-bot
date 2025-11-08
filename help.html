@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandos del Bot</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0f172a;
+            margin-bottom: 2rem;
+        }
+
+        .category {
+            margin-bottom: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .category-header {
+            background: #3b82f6;
+            color: white;
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        tr:hover {
+            background: #f1f5f9;
+        }
+
+        .command {
+            font-family: monospace;
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #2563eb;
+        }
+
+        .optional {
+            color: #64748b;
+        }
+
+        .required {
+            color: #dc2626;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>📖 Comandos del Bot</h1>
+
+    <div class="category">
+        <div class="category-header">🎲 Comandos Básicos</div>
+        <table>
+            <tr>
+                <th>Comando</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td><span class="command">_dado [número]</span></td>
+                <td>Tira un dado de X caras (1-100)</td>
+            </tr>
+            <tr>
+                <td><span class="command">_bola8 [pregunta]</span></td>
+                <td>Obtén respuestas aleatorias a tus preguntas</td>
+            </tr>
+            <tr>
+                <td><span class="command">_abrazo [@usuario]</span></td>
+                <td>Da un abrazo virtual (usuario aleatorio si no especificas)</td>
+            </tr>
+            <tr>
+                <td><span class="command">_pelea [@usuario]</span></td>
+                <td>Inicia una pelea amistosa (usuario aleatorio si no especificas)</td>
+            </tr>
+            <tr>
+                <td><span class="command">_cita [agregar/ver]</span></td>
+                <td>Sistema de citas memorables. Sin argumentos muestra una cita aleatoria</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="category">
+        <div class="category-header">💰 Economía y Puntos</div>
+        <table>
+            <tr>
+                <th>Comando</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td><span class="command">_farmear</span></td>
+                <td>Recibe puntos aleatorios con sistema de tiers y mejoras</td>
+            </tr>
+            <tr>
+                <td><span class="command">_puntos [@usuario]</span></td>
+                <td>Consulta tus puntos o los de otro usuario</td>
+            </tr>
+            <tr>
+                <td><span class="command">_robar [@usuario]</span></td>
+                <td>Intenta robar puntos (cooldown de 1 hora)</td>
+            </tr>
+            <tr>
+                <td><span class="command">_dar @usuario cantidad</span></td>
+                <td>Transfiere puntos a otro usuario</td>
+            </tr>
+            <tr>
+                <td><span class="command">_apostar cantidad</span></td>
+                <td>Apuesta una cantidad específica de puntos (50% prob.)</td>
+            </tr>
+            <tr>
+                <td><span class="command">_apostar todo</span></td>
+                <td>Apuesta todos tus puntos (50% prob.)</td>
+            </tr>
+            <tr>
+                <td><span class="command">_toppuntos</span></td>
+                <td>Ver ranking de usuarios con más puntos</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="category">
+        <div class="category-header">🛍️ Tienda e Inventario</div>
+        <table>
+            <tr>
+                <th>Comando</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td><span class="command">_tienda lista</span></td>
+                <td>Ver items disponibles en la tienda</td>
+            </tr>
+            <tr>
+                <td><span class="command">_tienda comprar <span class="required">&lt;id&gt;</span> [cantidad]</span></td>
+                <td>Comprar items de la tienda</td>
+            </tr>
+            <tr>
+                <td><span class="command">_tienda mis</span></td>
+                <td>Ver tus mejoras/boosts activos</td>
+            </tr>
+            <tr>
+                <td><span class="command">_inventario</span></td>
+                <td>Ver tu inventario de items</td>
+            </tr>
+            <tr>
+                <td><span class="command">_usar <span class="required">&lt;id&gt;</span> [cantidad]</span></td>
+                <td>Usar un item del inventario</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="category">
+        <div class="category-header">🎵 Música y Last.fm</div>
+        <table>
+            <tr>
+                <th>Comando</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td><span class="command">_musica</span></td>
+                <td>Ver la canción actual del usuario</td>
+            </tr>
+            <tr>
+                <td><span class="command">_lastfm set <span class="required">&lt;usuario&gt;</span></span></td>
+                <td>Vincular tu cuenta de Last.fm</td>
+            </tr>
+            <tr>
+                <td><span class="command">_top artistas @usuario [periodo] [n]</span></td>
+                <td>Ver top artistas de un usuario</td>
+            </tr>
+            <tr>
+                <td><span class="command">_top canciones @usuario [periodo] [n]</span></td>
+                <td>Ver top canciones de un usuario</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="category">
+        <div class="category-header">📺 Monitorización de Streams</div>
+        <table>
+            <tr>
+                <th>Comando</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td><span class="command">_seguir [streamer]</span></td>
+                <td>Monitorizar cambios de un streamer (título, categoría, estado)</td>
+            </tr>
+            <tr>
+                <td><span class="command">_dejardeseguir [streamer]</span></td>
+                <td>Dejar de monitorizar a un streamer</td>
+            </tr>
+            <tr>
+                <td><span class="command">_seguidos</span></td>
+                <td>Ver lista de streamers monitorizados en el canal</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="category">
+        <div class="category-header">⏱️ Tiempo y Estadísticas</div>
+        <table>
+            <tr>
+                <th>Comando</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td><span class="command">_tiempo [@usuario]</span></td>
+                <td>Ver tiempo activo en chat</td>
+            </tr>
+            <tr>
+                <td><span class="command">_historial [@usuario]</span></td>
+                <td>Ver estadísticas completas</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="category">
+        <div class="category-header">⚙️ Configuración</div>
+        <table>
+            <tr>
+                <th>Comando</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td><span class="command">_me [si/no]</span></td>
+                <td>Activar/desactivar uso de /me en los mensajes del bot</td>
+            </tr>
+            <tr>
+                <td><span class="command">_activador [caracter]</span></td>
+                <td>Cambiar el prefijo de comandos (solo mods)</td>
+            </tr>
+            <tr>
+                <td><span class="command">_restablecer_listas</span></td>
+                <td>Reiniciar listas de usuarios (solo owner)</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // Podemos añadir interactividad aquí si es necesario
+    </script>
+</body>
+</html>
