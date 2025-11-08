@@ -10,27 +10,30 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f8fafc;
-            color: #1e293b;
+            background-color: var(--bg);
+            color: var(--text);
             line-height: 1.5;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         h1 {
             text-align: center;
-            color: #0f172a;
+            color: var(--title);
             margin-bottom: 2rem;
+            transition: color 0.3s ease;
         }
 
         .category {
             margin-bottom: 2rem;
-            background: white;
+            background: var(--card);
             border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px -2px rgba(0,0,0,0.15);
             overflow: hidden;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
         }
 
         .category-header {
-            background: #3b82f6;
+            background: var(--accent);
             color: white;
             padding: 1rem;
             font-size: 1.2rem;
@@ -40,314 +43,212 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            background: white;
         }
 
         th, td {
             padding: 12px;
             text-align: left;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid var(--border);
         }
 
         th {
-            background: #f8fafc;
+            background: var(--bg-light);
             font-weight: 600;
-            color: #475569;
+            color: var(--muted);
         }
 
         tr:hover {
-            background: #f1f5f9;
+            background: var(--hover);
         }
 
         .command {
             font-family: monospace;
-            background: #f1f5f9;
+            background: var(--cmd-bg);
             padding: 2px 6px;
             border-radius: 4px;
-            color: #2563eb;
+            color: var(--accent);
         }
 
-        .optional {
-            color: #64748b;
-        }
+        .optional { color: #64748b; }
+        .required { color: #dc2626; }
 
-        .required {
-            color: #dc2626;
-        }
-
-        /* Dark mode variables and helpers */
+        /* 🌞 Variables de color */
         :root {
             --bg: #f8fafc;
+            --bg-light: #f1f5f9;
             --text: #1e293b;
+            --title: #0f172a;
             --card: #ffffff;
-            --muted: #64748b;
+            --muted: #475569;
             --accent: #2563eb;
+            --hover: #f8fafc;
+            --cmd-bg: #eef2ff;
+            --border: #e2e8f0;
         }
 
+        /* 🌚 Modo oscuro */
         .dark {
-            --bg: #0b1220;
-            --text: #e6eef8;
-            --card: #081022;
-            --muted: #9aa9bf;
+            --bg: #0b0f19;
+            --bg-light: #141a29;
+            --text: #e2e8f0;
+            --title: #f8fafc;
+            --card: #101827;
+            --muted: #94a3b8;
             --accent: #60a5fa;
+            --hover: #1e293b;
+            --cmd-bg: rgba(255,255,255,0.08);
+            --border: #334155;
         }
 
-        /* Apply variables */
-        body { background-color: var(--bg); color: var(--text); }
-        .category { background: var(--card); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        th { background: var(--bg); color: var(--muted); }
-        .command { background: rgba(255,255,255,0.03); color: var(--accent); }
-
-        /* Dark mode toggle button */
+        /* 🔘 Botón flotante */
         #darkToggle {
-            background: transparent;
-            border: 1px solid rgba(0,0,0,0.08);
-            padding: 6px 10px;
-            border-radius: 8px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            background: var(--accent);
+            color: white;
+            font-size: 1.2rem;
             cursor: pointer;
-            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: background 0.3s ease, transform 0.2s ease;
+            z-index: 999;
         }
-        .dark #darkToggle { border-color: rgba(255,255,255,0.12); }
+
+        #darkToggle:hover {
+            transform: scale(1.1);
+            background: #1d4ed8;
+        }
 
         @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            
-            th, td {
-                padding: 8px;
-            }
+            body { padding: 10px; }
+            th, td { padding: 8px; }
+            #darkToggle { width: 40px; height: 40px; font-size: 1rem; }
         }
     </style>
 </head>
 <body>
     <h1>📖 Comandos del Bot</h1>
 
-    <div style="text-align:center; margin-bottom:1rem;">
-        <button id="darkToggle" aria-pressed="false" title="Alternar modo oscuro">Modo oscuro</button>
-    </div>
+    <button id="darkToggle" aria-pressed="false" title="Alternar modo oscuro">🌙</button>
 
+    <!-- 🎲 Comandos básicos -->
     <div class="category">
         <div class="category-header">🎲 Comandos Básicos</div>
         <table>
-            <tr>
-                <th>Comando</th>
-                <th>Descripción</th>
-            </tr>
-            <tr>
-                <td><span class="command">_dado [número]</span></td>
-                <td>Tira un dado de X caras (1-100)</td>
-            </tr>
-            <tr>
-                <td><span class="command">_bola8 [pregunta]</span></td>
-                <td>Obtén respuestas aleatorias a tus preguntas</td>
-            </tr>
-            <tr>
-                <td><span class="command">_abrazo [@usuario]</span></td>
-                <td>Da un abrazo virtual (usuario aleatorio si no especificas)</td>
-            </tr>
-            <tr>
-                <td><span class="command">_pelea [@usuario]</span></td>
-                <td>Inicia una pelea amistosa (usuario aleatorio si no especificas)</td>
-            </tr>
-            <tr>
-                <td><span class="command">_cita [agregar/ver]</span></td>
-                <td>Sistema de citas memorables. Sin argumentos muestra una cita aleatoria</td>
-            </tr>
+            <tr><th>Comando</th><th>Descripción</th></tr>
+            <tr><td><span class="command">_dado [número]</span></td><td>Tira un dado de X caras (1-100)</td></tr>
+            <tr><td><span class="command">_bola8 [pregunta]</span></td><td>Obtén respuestas aleatorias a tus preguntas</td></tr>
+            <tr><td><span class="command">_abrazo [@usuario]</span></td><td>Da un abrazo virtual</td></tr>
+            <tr><td><span class="command">_pelea [@usuario]</span></td><td>Inicia una pelea amistosa</td></tr>
+            <tr><td><span class="command">_cita [agregar/ver]</span></td><td>Ver o añadir citas memorables</td></tr>
         </table>
     </div>
 
+    <!-- 💰 Economía -->
     <div class="category">
         <div class="category-header">💰 Economía y Puntos</div>
         <table>
-            <tr>
-                <th>Comando</th>
-                <th>Descripción</th>
-            </tr>
-            <tr>
-                <td><span class="command">_farmear</span></td>
-                <td>Recibe puntos aleatorios con sistema de tiers y mejoras</td>
-            </tr>
-            <tr>
-                <td><span class="command">_puntos [@usuario]</span></td>
-                <td>Consulta tus puntos o los de otro usuario</td>
-            </tr>
-            <tr>
-                <td><span class="command">_robar [@usuario]</span></td>
-                <td>Intenta robar puntos (cooldown de 1 hora)</td>
-            </tr>
-            <tr>
-                <td><span class="command">_dar @usuario cantidad</span></td>
-                <td>Transfiere puntos a otro usuario</td>
-            </tr>
-            <tr>
-                <td><span class="command">_apostar cantidad</span></td>
-                <td>Apuesta una cantidad específica de puntos (50% prob.)</td>
-            </tr>
-            <tr>
-                <td><span class="command">_apostar todo</span></td>
-                <td>Apuesta todos tus puntos (50% prob.)</td>
-            </tr>
-            <tr>
-                <td><span class="command">_toppuntos</span></td>
-                <td>Ver ranking de usuarios con más puntos</td>
-            </tr>
+            <tr><th>Comando</th><th>Descripción</th></tr>
+            <tr><td><span class="command">_farmear</span></td><td>Recibe puntos aleatorios con sistema de tiers</td></tr>
+            <tr><td><span class="command">_puntos [@usuario]</span></td><td>Consulta tus puntos o los de otro usuario</td></tr>
+            <tr><td><span class="command">_robar [@usuario]</span></td><td>Intenta robar puntos (cooldown 1h)</td></tr>
+            <tr><td><span class="command">_dar @usuario cantidad</span></td><td>Transfiere puntos a otro usuario</td></tr>
+            <tr><td><span class="command">_apostar cantidad</span></td><td>Apuesta una cantidad específica (50%)</td></tr>
+            <tr><td><span class="command">_apostar todo</span></td><td>Apuesta todos tus puntos (50%)</td></tr>
+            <tr><td><span class="command">_toppuntos</span></td><td>Ver ranking de usuarios</td></tr>
         </table>
     </div>
 
+    <!-- 🛍️ Tienda -->
     <div class="category">
         <div class="category-header">🛍️ Tienda e Inventario</div>
         <table>
-            <tr>
-                <th>Comando</th>
-                <th>Descripción</th>
-            </tr>
-            <tr>
-                <td><span class="command">_tienda</span></td>
-                <td>Ver items disponibles en la tienda</td>
-            </tr>
-            <tr>
-                <td><span class="command">_comprar <span class="required">&lt;id&gt;</span> [cantidad]</span></td>
-                <td>Comprar items de la tienda. Ej: <span class="command">_comprar prob10 2</span></td>
-            </tr>
-            <tr>
-                <td><span class="command">_mejoras</span></td>
-                <td>Ver tus mejoras/boosts activos</td>
-            </tr>
-            <tr>
-                <td><span class="command">_inventario</span></td>
-                <td>Ver tu inventario de items</td>
-            </tr>
-            <tr>
-                <td><span class="command">_usar <span class="required">&lt;id&gt;</span> [cantidad]</span></td>
-                <td>Usar un item del inventario (puedes usar más de 1). Ej: <span class="command">_usar prob10 1</span></td>
-            </tr>
+            <tr><th>Comando</th><th>Descripción</th></tr>
+            <tr><td><span class="command">_tienda</span></td><td>Ver items disponibles en la tienda</td></tr>
+            <tr><td><span class="command">_comprar &lt;id&gt; [cantidad]</span></td><td>Comprar items de la tienda</td></tr>
+            <tr><td><span class="command">_mejoras</span></td><td>Ver tus mejoras activas</td></tr>
+            <tr><td><span class="command">_inventario</span></td><td>Ver tu inventario</td></tr>
+            <tr><td><span class="command">_usar &lt;id&gt; [cantidad]</span></td><td>Usar un item del inventario</td></tr>
         </table>
     </div>
 
+    <!-- 🎵 Música -->
     <div class="category">
         <div class="category-header">🎵 Música y Last.fm</div>
         <table>
-            <tr>
-                <th>Comando</th>
-                <th>Descripción</th>
-            </tr>
-            <tr>
-                <td><span class="command">_musica</span></td>
-                <td>Ver la canción actual del usuario (requiere haber vinculado Last.fm)</td>
-            </tr>
-            <tr>
-                <td><span class="command">_setlastfm <span class="required">&lt;lastfm_user&gt;</span></span></td>
-                <td>Vincular tu cuenta de Last.fm (también: <span class="command">_lastfm set &lt;user&gt;</span>)</td>
-            </tr>
-            <tr>
-                <td><span class="command">_top artistas @usuario [periodo] [n]</span></td>
-                <td>Ver top artistas de un usuario. Alternativas: <span class="command">_topartistas</span></td>
-            </tr>
-            <tr>
-                <td><span class="command">_top canciones @usuario [periodo] [n]</span></td>
-                <td>Ver top canciones de un usuario. Alternativas: <span class="command">_topcanciones</span></td>
-            </tr>
+            <tr><th>Comando</th><th>Descripción</th></tr>
+            <tr><td><span class="command">_musica</span></td><td>Ver la canción actual del usuario</td></tr>
+            <tr><td><span class="command">_setlastfm &lt;lastfm_user&gt;</span></td><td>Vincular tu cuenta de Last.fm</td></tr>
+            <tr><td><span class="command">_top artistas @usuario [periodo] [n]</span></td><td>Ver top artistas</td></tr>
+            <tr><td><span class="command">_top canciones @usuario [periodo] [n]</span></td><td>Ver top canciones</td></tr>
         </table>
     </div>
 
+    <!-- 📺 Streams -->
     <div class="category">
         <div class="category-header">📺 Monitorización de Streams</div>
         <table>
-            <tr>
-                <th>Comando</th>
-                <th>Descripción</th>
-            </tr>
-            <tr>
-                <td><span class="command">_seguir [streamer]</span></td>
-                <td>Monitorizar cambios de un streamer (título, categoría, estado)</td>
-            </tr>
-            <tr>
-                <td><span class="command">_dejardeseguir [streamer]</span></td>
-                <td>Dejar de monitorizar a un streamer</td>
-            </tr>
-            <tr>
-                <td><span class="command">_seguidos</span></td>
-                <td>Ver lista de streamers monitorizados en el canal</td>
-            </tr>
+            <tr><th>Comando</th><th>Descripción</th></tr>
+            <tr><td><span class="command">_seguir [streamer]</span></td><td>Monitorizar cambios de un streamer</td></tr>
+            <tr><td><span class="command">_dejardeseguir [streamer]</span></td><td>Dejar de monitorizar</td></tr>
+            <tr><td><span class="command">_seguidos</span></td><td>Ver lista de streamers monitorizados</td></tr>
         </table>
     </div>
 
+    <!-- ⏱️ Tiempo -->
     <div class="category">
         <div class="category-header">⏱️ Tiempo y Estadísticas</div>
         <table>
-            <tr>
-                <th>Comando</th>
-                <th>Descripción</th>
-            </tr>
-            <tr>
-                <td><span class="command">_tiempo [@usuario]</span></td>
-                <td>Ver tiempo activo en chat</td>
-            </tr>
-            <tr>
-                <td><span class="command">_historial [@usuario]</span></td>
-                <td>Ver estadísticas completas</td>
-            </tr>
+            <tr><th>Comando</th><th>Descripción</th></tr>
+            <tr><td><span class="command">_tiempo [@usuario]</span></td><td>Ver tiempo activo en chat</td></tr>
+            <tr><td><span class="command">_historial [@usuario]</span></td><td>Ver estadísticas completas</td></tr>
         </table>
     </div>
 
+    <!-- ⚙️ Configuración -->
     <div class="category">
         <div class="category-header">⚙️ Configuración</div>
         <table>
-            <tr>
-                <th>Comando</th>
-                <th>Descripción</th>
-            </tr>
-            <tr>
-                <td><span class="command">_me [si/no]</span></td>
-                <td>Activar/desactivar uso de /me en los mensajes del bot</td>
-            </tr>
-            <tr>
-                <td><span class="command">_activador [caracter]</span></td>
-                <td>Cambiar el prefijo de comandos (solo mods)</td>
-            </tr>
-            <tr>
-                <td><span class="command">_restablecer_listas</span></td>
-                <td>Reiniciar listas de usuarios (solo owner)</td>
-            </tr>
+            <tr><th>Comando</th><th>Descripción</th></tr>
+            <tr><td><span class="command">_me [si/no]</span></td><td>Activar/desactivar uso de /me</td></tr>
+            <tr><td><span class="command">_activador [caracter]</span></td><td>Cambiar el prefijo de comandos</td></tr>
+            <tr><td><span class="command">_restablecer_listas</span></td><td>Reiniciar listas de usuarios</td></tr>
         </table>
     </div>
 
     <script>
-        // Dark mode toggle persisted in localStorage
+        // 🌗 Toggle persistente de modo oscuro
         (function(){
-            const KEY = 'help_dark_mode_v1';
+            const KEY = 'help_dark_mode_v2';
             const btn = document.getElementById('darkToggle');
-            if (!btn) return;
 
             function applyMode(dark) {
                 if (dark) {
                     document.documentElement.classList.add('dark');
-                    btn.textContent = 'Modo claro';
+                    btn.textContent = '☀️';
                     btn.setAttribute('aria-pressed', 'true');
                 } else {
                     document.documentElement.classList.remove('dark');
-                    btn.textContent = 'Modo oscuro';
+                    btn.textContent = '🌙';
                     btn.setAttribute('aria-pressed', 'false');
                 }
                 try { localStorage.setItem(KEY, dark ? '1' : '0'); } catch (e) {}
             }
 
-            // Initialize from saved value (if any)
             try {
                 const saved = localStorage.getItem(KEY);
                 applyMode(saved === '1');
-            } catch (e) {
-                // ignore
-            }
+            } catch (e) {}
 
-            // Toggle on click (toggle returns true if class now present)
-            btn.addEventListener('click', function(){
+            btn.addEventListener('click', () => {
                 const isNowDark = document.documentElement.classList.toggle('dark');
                 applyMode(isNowDark);
             });
         })();
-        // Podemos añadir interactividad aquí si es necesario
     </script>
 </body>
 </html>
