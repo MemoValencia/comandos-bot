@@ -75,6 +75,40 @@
             color: #dc2626;
         }
 
+        /* Dark mode variables and helpers */
+        :root {
+            --bg: #f8fafc;
+            --text: #1e293b;
+            --card: #ffffff;
+            --muted: #64748b;
+            --accent: #2563eb;
+        }
+
+        .dark {
+            --bg: #0b1220;
+            --text: #e6eef8;
+            --card: #081022;
+            --muted: #9aa9bf;
+            --accent: #60a5fa;
+        }
+
+        /* Apply variables */
+        body { background-color: var(--bg); color: var(--text); }
+        .category { background: var(--card); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        th { background: var(--bg); color: var(--muted); }
+        .command { background: rgba(255,255,255,0.03); color: var(--accent); }
+
+        /* Dark mode toggle button */
+        #darkToggle {
+            background: transparent;
+            border: 1px solid rgba(0,0,0,0.08);
+            padding: 6px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .dark #darkToggle { border-color: rgba(255,255,255,0.12); }
+
         @media (max-width: 768px) {
             body {
                 padding: 10px;
@@ -88,6 +122,10 @@
 </head>
 <body>
     <h1>📖 Comandos del Bot</h1>
+
+    <div style="text-align:center; margin-bottom:1rem;">
+        <button id="darkToggle" aria-pressed="false" title="Alternar modo oscuro">Modo oscuro</button>
+    </div>
 
     <div class="category">
         <div class="category-header">🎲 Comandos Básicos</div>
@@ -276,6 +314,39 @@
     </div>
 
     <script>
+        // Dark mode toggle persisted in localStorage
+        (function(){
+            const KEY = 'help_dark_mode_v1';
+            const btn = document.getElementById('darkToggle');
+            if (!btn) return;
+
+            function applyMode(dark) {
+                if (dark) {
+                    document.documentElement.classList.add('dark');
+                    btn.textContent = 'Modo claro';
+                    btn.setAttribute('aria-pressed', 'true');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    btn.textContent = 'Modo oscuro';
+                    btn.setAttribute('aria-pressed', 'false');
+                }
+                try { localStorage.setItem(KEY, dark ? '1' : '0'); } catch (e) {}
+            }
+
+            // Initialize from saved value (if any)
+            try {
+                const saved = localStorage.getItem(KEY);
+                applyMode(saved === '1');
+            } catch (e) {
+                // ignore
+            }
+
+            // Toggle on click (toggle returns true if class now present)
+            btn.addEventListener('click', function(){
+                const isNowDark = document.documentElement.classList.toggle('dark');
+                applyMode(isNowDark);
+            });
+        })();
         // Podemos añadir interactividad aquí si es necesario
     </script>
 </body>
