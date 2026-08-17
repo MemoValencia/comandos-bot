@@ -137,70 +137,72 @@
 
     <!-- 🎲 Comandos básicos -->
     <div class="category">
-        <div class="category-header">🎲 Comandos Básicos</div>
+        <div class="category-header">🎲 Comandos básicos</div>
         <table>
             <tr><th>Comando</th><th>Descripción</th></tr>
-            <tr><td><span class="command">_dado [número]</span></td><td>Tira un dado de X caras (1-100)</td></tr>
-            <tr><td><span class="command">_bola8 [pregunta]</span></td><td>Obtén respuestas aleatorias a tus preguntas</td></tr>
-            <tr><td><span class="command">_abrazo [@usuario]</span></td><td>Da un abrazo virtual</td></tr>
-            <tr><td><span class="command">_pelea [@usuario]</span></td><td>Inicia una pelea amistosa</td></tr>
-            <tr><td><span class="command">_cita [agregar/ver]</span></td><td>Ver o añadir citas memorables</td></tr>
+            <tr><td><span class="command">_ayuda</span></td><td>Abre la ayuda de comandos del bot.</td></tr>
+            <tr><td><span class="command">_dado [número]</span></td><td>Tira un dado de X caras (1-100).</td></tr>
+            <tr><td><span class="command">_bola8 [pregunta]</span></td><td>Responde preguntas aleatorias.</td></tr>
+            <tr><td><span class="command">_abrazo [@usuario]</span></td><td>Da un abrazo virtual.</td></tr>
+            <tr><td><span class="command">_pelea [@usuario]</span></td><td>Inicia una pelea amistosa.</td></tr>
+            <tr><td><span class="command">_cita [agregar/ver]</span></td><td>Ver o guardar citas.</td></tr>
         </table>
     </div>
 
     <!-- 💰 Economía -->
     <div class="category">
-        <div class="category-header">💰 Economía y Puntos</div>
+        <div class="category-header">💰 Economía y puntos</div>
         <table>
             <tr><th>Comando</th><th>Descripción</th></tr>
-            <tr><td><span class="command">_farmear</span></td><td>Recibe puntos aleatorios con sistema de tiers</td></tr>
-            <tr><td><span class="command">_puntos [@usuario]</span></td><td>Consulta tus puntos o los de otro usuario</td></tr>
-            <tr><td><span class="command">_robar [@usuario]</span></td><td>Intenta robar puntos (cooldown 1h)</td></tr>
-            <tr><td><span class="command">_dar @usuario cantidad</span></td><td>Transfiere puntos a otro usuario</td></tr>
-            <tr><td><span class="command">_apostar cantidad</span></td><td>Apuesta una cantidad específica (50%) con protección opcional</td></tr>
-            <tr><td><span class="command">_apostar todo</span></td><td>Apuesta todos tus puntos (50%) con protección opcional</td></tr>
-            <tr><td><span class="command">_toppuntos</span></td><td>Ver ranking de usuarios</td></tr>
+            <tr><td><span class="command">_farmear</span></td><td>Obtiene puntos aleatorios con sistema de mejoras.</td></tr>
+            <tr><td><span class="command">_puntos [@usuario]</span></td><td>Consulta tus puntos o los de otra persona.</td></tr>
+            <tr><td><span class="command">_robar [@usuario]</span></td><td>Intenta robar puntos a otro usuario.</td></tr>
+            <tr><td><span class="command">_dar @usuario cantidad</span></td><td>Transfiere puntos a otro usuario.</td></tr>
+            <tr><td><span class="command">_apostar cantidad</span></td><td>Apuesta una cantidad específica.</td></tr>
+            <tr><td><span class="command">_apostar todo</span></td><td>Apuesta todos tus puntos disponibles.</td></tr>
+            <tr><td><span class="command">_apostar 50%</span></td><td>Apuesta un porcentaje de tus puntos.</td></tr>
+            <tr><td><span class="command">_toppuntos</span></td><td>Ver el ranking de puntos.</td></tr>
         </table>
     </div>
 
     <!-- 🛍️ Tienda -->
     <div class="category">
-        <div class="category-header">🛍️ Tienda e Inventario</div>
+        <div class="category-header">🛍️ Tienda, inventario y mejoras</div>
         <table>
             <tr><th>Comando</th><th>Descripción</th></tr>
-            <tr><td><span class="command">_tienda</span></td><td>Ver items disponibles en la tienda</td></tr>
-            <tr><td><span class="command">_comprar &lt;id&gt; [cantidad]</span></td><td>Comprar items de la tienda (van al inventario)</td></tr>
-            <tr><td><span class="command">_inventario</span></td><td>Ver los items que tienes guardados</td></tr>
-            <tr><td><span class="command">_usar &lt;id&gt; [cantidad]</span></td><td>Usar o activar un item del inventario</td></tr>
-            <tr><td><span class="command">_mejoras</span></td><td>Ver tus mejoras, boosts y protecciones activas</td></tr>
+            <tr><td><span class="command">_tienda</span></td><td>Muestra los objetos disponibles.</td></tr>
+            <tr><td><span class="command">_comprar &lt;id&gt; [cantidad]</span></td><td>Compra un ítem de la tienda.</td></tr>
+            <tr><td><span class="command">_inventario</span></td><td>Consulta los objetos que tienes guardados.</td></tr>
+            <tr><td><span class="command">_usar &lt;id&gt; [cantidad]</span></td><td>Usa un ítem del inventario.</td></tr>
+            <tr><td><span class="command">_mejoras</span></td><td>Verifica tus boosts y protecciones activas.</td></tr>
         </table>
     </div>
 
-    <!-- 🎴 Sistema de Tarjetas -->
+    <!-- 🎴 Tarjetas -->
     <div class="category">
-        <div class="category-header">🎴 Colección de Tarjetas</div>
+        <div class="category-header">🎴 Tarjetas y colecciones</div>
         <table>
             <tr><th>Comando</th><th>Descripción</th></tr>
-            <tr><td><span class="command">_comprar sobre [cantidad]</span></td><td>Comprar sobres de cartas (3 cartas por sobre)</td></tr>
-            <tr><td><span class="command">_usar sobre [cantidad]</span></td><td>Abrir los sobres guardados en tu inventario</td></tr>
-            <tr><td><span class="command">_colecciones</span></td><td>Ver todas las colecciones disponibles y sus tipos</td></tr>
-            <tr><td><span class="command">_coleccion &lt;nombre&gt;</span></td><td>Ver detalles de una colección y tu progreso</td></tr>
-            <tr><td><span class="command">_tarjetas [@usuario]</span></td><td>Ver resumen de todas tus colecciones</td></tr>
-            <tr><td><span class="command">_tarjetas [@usuario] &lt;colección&gt;</span></td><td>Ver tarjetas de una colección específica</td></tr>
-            <tr><td><span class="command">_duplicadas [@usuario]</span></td><td>Ver lista de tarjetas duplicadas</td></tr>
-            <tr><td><span class="command">_toptarjetas [@usuario]</span></td><td>Ver ranking de coleccionistas o info específica de un usuario</td></tr>
+            <tr><td><span class="command">_comprar sobre [cantidad]</span></td><td>Compra sobres de cartas.</td></tr>
+            <tr><td><span class="command">_usar sobre [cantidad]</span></td><td>Abre sobres de tarjetas del inventario.</td></tr>
+            <tr><td><span class="command">_colecciones</span></td><td>Lista todas las colecciones disponibles.</td></tr>
+            <tr><td><span class="command">_coleccion &lt;nombre&gt;</span></td><td>Consulta una colección concreta.</td></tr>
+            <tr><td><span class="command">_tarjetas [@usuario] [colección]</span></td><td>Ver resumen de tarjetas o detalle por colección.</td></tr>
+            <tr><td><span class="command">_duplicadas [@usuario]</span></td><td>Lista cartas duplicadas del usuario.</td></tr>
+            <tr><td><span class="command">_toptarjetas [@usuario]</span></td><td>Muestra el ranking de coleccionistas.</td></tr>
         </table>
     </div>
 
-    <!-- � Música -->
+    <!-- 🎵 Música -->
     <div class="category">
         <div class="category-header">🎵 Música y Last.fm</div>
         <table>
             <tr><th>Comando</th><th>Descripción</th></tr>
-            <tr><td><span class="command">_musica</span></td><td>Ver la canción actual del usuario</td></tr>
-            <tr><td><span class="command">_setlastfm &lt;lastfm_user&gt;</span></td><td>Vincular tu cuenta de Last.fm</td></tr>
-            <tr><td><span class="command">_top artistas @usuario [periodo] [n]</span></td><td>Ver top artistas</td></tr>
-            <tr><td><span class="command">_top canciones @usuario [periodo] [n]</span></td><td>Ver top canciones</td></tr>
+            <tr><td><span class="command">_musica [@usuario]</span></td><td>Consulta la última canción o la que está sonando.</td></tr>
+            <tr><td><span class="command">_setlastfm &lt;usuario_lastfm&gt;</span></td><td>Vincula tu cuenta de Last.fm.</td></tr>
+            <tr><td><span class="command">_lastfm set &lt;usuario_lastfm&gt;</span></td><td>Alias para guardar tu cuenta de Last.fm.</td></tr>
+            <tr><td><span class="command">_top artistas @usuario [periodo] [n]</span></td><td>Muestra el top de artistas.</td></tr>
+            <tr><td><span class="command">_top canciones @usuario [periodo] [n]</span></td><td>Muestra el top de canciones.</td></tr>
         </table>
     </div>
 
@@ -209,65 +211,66 @@
         <div class="category-header">🎮 Fortnite</div>
         <table>
             <tr><th>Comando</th><th>Descripción</th></tr>
-            <tr><td><span class="command">_fortnite set &lt;usuario&gt; [plataforma]</span></td><td>Vincular tu cuenta de Fortnite. Plataformas: pc, psn, xbl</td></tr>
-            <tr><td><span class="command">_fortnite stats</span></td><td>Ver tus estadísticas vinculadas</td></tr>
-            <tr><td><span class="command">_fortnite stats @usuario</span></td><td>Ver estadísticas de otro usuario vinculado</td></tr>
+            <tr><td><span class="command">_fortnite set &lt;usuario&gt; [plataforma]</span></td><td>Vincula tu cuenta de Fortnite (pc, psn, xbl).</td></tr>
+            <tr><td><span class="command">_fortnite stats</span></td><td>Consulta tus estadísticas vinculadas.</td></tr>
+            <tr><td><span class="command">_fortnite stats @usuario</span></td><td>Consulta las estadísticas de otra persona vinculada.</td></tr>
         </table>
     </div>
 
     <!-- 📺 Streams -->
     <div class="category">
-        <div class="category-header">📺 Monitorización de Streams</div>
+        <div class="category-header">📺 Monitorización de streams</div>
         <table>
             <tr><th>Comando</th><th>Descripción</th></tr>
-            <tr><td><span class="command">_seguir [streamer]</span></td><td>Monitorizar cambios de un streamer</td></tr>
-            <tr><td><span class="command">_dejardeseguir [streamer]</span></td><td>Dejar de monitorizar</td></tr>
-            <tr><td><span class="command">_seguidos</span></td><td>Ver lista de streamers monitorizados</td></tr>
+            <tr><td><span class="command">_seguir [streamer]</span></td><td>Empieza a monitorizar un canal.</td></tr>
+            <tr><td><span class="command">_dejardeseguir [streamer]</span></td><td>Deja de seguir a un streamer.</td></tr>
+            <tr><td><span class="command">_seguidos</span></td><td>Muestra la lista de streamers monitorizados.</td></tr>
         </table>
     </div>
 
-    <!-- ⏱️ Tiempo -->
+    <!-- ⏱️ Tiempo y estadísticas -->
     <div class="category">
-        <div class="category-header">⏱️ Tiempo y Estadísticas</div>
+        <div class="category-header">⏱️ Tiempo y estadísticas</div>
         <table>
             <tr><th>Comando</th><th>Descripción</th></tr>
-            <tr><td><span class="command">_tiempo [@usuario]</span></td><td>Ver tiempo activo en chat</td></tr>
-            <tr><td><span class="command">_historial [@usuario]</span></td><td>Ver estadísticas completas</td></tr>
+            <tr><td><span class="command">_tiempo [@usuario]</span></td><td>Consulta el tiempo activo en chat.</td></tr>
+            <tr><td><span class="command">_historial [@usuario]</span></td><td>Muestra estadísticas completas del usuario.</td></tr>
         </table>
     </div>
 
     <!-- ⚙️ Configuración -->
     <div class="category">
-        <div class="category-header">⚙️ Configuración</div>
+        <div class="category-header">⚙️ Configuración del bot</div>
         <table>
             <tr><th>Comando</th><th>Descripción</th></tr>
-            <tr><td><span class="command">_me [si/no]</span></td><td>Activar/desactivar uso de /me</td></tr>
-            <tr><td><span class="command">_activador [caracter]</span></td><td>Cambiar el prefijo de comandos</td></tr>
-            <tr><td><span class="command">_restablecer</span></td><td>Restaurar el activador por defecto (_) en ese canal</td></tr>
-            <tr><td><span class="command">_restablecer_listas [all]</span></td><td>Reiniciar listas de usuarios activas por canal</td></tr>
-            <tr><td><span class="command">_status</span></td><td>Ver estado intern del bot y PID</td></tr>
+            <tr><td><span class="command">_me [si/no]</span></td><td>Activa o desactiva el uso de /me en mensajes.</td></tr>
+            <tr><td><span class="command">_activador [caracter]</span></td><td>Cambia el prefijo de comandos del canal.</td></tr>
+            <tr><td><span class="command">_restablecer</span></td><td>Restaura el activador por defecto (_) en ese canal.</td></tr>
+            <tr><td><span class="command">_restablecer_listas [all]</span></td><td>Reinicia las listas de usuarios activas.</td></tr>
+            <tr><td><span class="command">_status</span></td><td>Consulta el estado interno del bot y el PID.</td></tr>
         </table>
     </div>
 
-    <!-- 🛡️ Moderación y chat -->
+    <!-- 🛡️ Moderación -->
     <div class="category">
-        <div class="category-header">🛡️ Moderación y Chat</div>
+        <div class="category-header">🛡️ Moderación y chat</div>
         <table>
             <tr><th>Comando</th><th>Descripción</th></tr>
-            <tr><td><span class="command">_borrar [cantidad] [intervalo]</span></td><td>Limpia chat y borra mensajes; solo mods/streamer</td></tr>
-            <tr><td><span class="command">_salir</span></td><td>Hace que el bot abandone el chat actual; solo mods/streamer</td></tr>
+            <tr><td><span class="command">_borrar [cantidad] [intervalo]</span></td><td>Hace limpieza del chat; solo moderadores o streamer.</td></tr>
+            <tr><td><span class="command">_salir</span></td><td>Hace que el bot abandone el chat actual; solo mods/streamer.</td></tr>
         </table>
     </div>
 
-    <!-- 7TV -->
+    <!-- 🎨 7TV -->
     <div class="category">
         <div class="category-header">🎨 7TV</div>
         <table>
             <tr><th>Comando</th><th>Descripción</th></tr>
-            <tr><td><span class="command">_7tv</span></td><td>Consulta el estado del set de emotes del canal</td></tr>
-            <tr><td><span class="command">_7tv add &lt;url_emote_7tv&gt;</span></td><td>Añade un emote al set del canal</td></tr>
-            <tr><td><span class="command">_permitirmods [si/no]</span></td><td>Permite o deniega a mods usar comandos de 7TV</td></tr>
-            <tr><td><span class="command">_editor [usuario]</span></td><td>Añade o quita editores autorizados de 7TV</td></tr>
+            <tr><td><span class="command">_7tv</span></td><td>Consulta el estado del set de emotes del canal.</td></tr>
+            <tr><td><span class="command">_7tv add &lt;url_emote_7tv&gt;</span></td><td>Añade un emote al set del canal.</td></tr>
+            <tr><td><span class="command">_7tv remove &lt;nombre_emote&gt;</span></td><td>Elimina un emote del set del canal.</td></tr>
+            <tr><td><span class="command">_permitirmods [si/no]</span></td><td>Permite o deniega a los mods usar 7TV.</td></tr>
+            <tr><td><span class="command">_editor [usuario]</span></td><td>Añade o quita editores autorizados en 7TV.</td></tr>
         </table>
     </div>
 
