@@ -272,7 +272,7 @@
         <div class="category-header">🌦️ Utilidades</div>
         <table>
             <tr><th>Comando</th><th>Descripción</th></tr>
-            <tr><td><span class="command">_clima [ciudad]</span></td><td>Registra tu ciudad (en susurro privado) o consulta el clima en el chat. Muestra temperatura, condición, viento y humedad.</td></tr>
+            <tr><td><span class="command">_clima [ciudad]</span></td><td>Registra tu ciudad (en susurro privado) o consulta el clima en el chat. Muestra temperatura, condición, probabilidad de lluvia en las próximas 24 horas, viento y humedad.</td></tr>
         </table>
     </div>
 
@@ -281,6 +281,7 @@
         <div class="category-header">🎨 7TV</div>
         <table>
             <tr><th>Comando</th><th>Descripción</th></tr>
+            <tr><td><span class="command">_configurar [si/no]</span></td><td>Con <span class="command">si</span> añade o con <span class="command">no</span> elimina los emotes definidos como <span class="command">{ name, url }</span> en <span class="command">CONFIGURED_EMOTE_LINKS</span>. El guion bajo de <span class="command">name</span> es una base: se sustituye automáticamente por el activador actual del canal. Por ejemplo, <span class="command">{ name: '_musica', url: '...' }</span> se configura como <span class="command">!musica</span> si el activador del canal es <span class="command">!</span>.</td></tr>
             <tr><td><span class="command">_agregar &lt;url_emote_7tv&gt;</span></td><td>Añade un emote al set del canal.</td></tr>
             <tr><td><span class="command">_quitar &lt;nombre_emote&gt;</span></td><td>Elimina un emote del set del canal.</td></tr>
             <tr><td><span class="command">_renombrar &lt;nombre_actual&gt; [nombre_nuevo]</span></td><td>Renombra un emote o lo restaura al nombre original si no se da un nombre nuevo.</td></tr>
